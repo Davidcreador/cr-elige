@@ -1,0 +1,162 @@
+{
+  "alvaro-ramos": {
+    "displayName": "Álvaro Ramos",
+    "party": "Liberación Nacional",
+    "ideology": "Center-Left",
+    "summaryFile": "LiberacionNacional-AlvaroRamos-summary.md",
+    "sourcePdf": "LiberacionNacional-AlvaroRamos-PlandeGobierno.pdf",
+    "slug": "alvaro-ramos"
+  },
+  "andres-robles": {
+    "displayName": "Andrés Robles",
+    "party": "Frente Amplio",
+    "ideology": "Left",
+    "summaryFile": "FrenteAmplio-AndresRobles-summary.md",
+    "sourcePdf": "FrenteAmplio-AndresRobles-PlandeGobierno.pdf",
+    "slug": "andres-robles"
+  },
+  "ana-virginia-calzada": {
+    "displayName": "Ana Virginia Calzada",
+    "party": "Centro Democrático y Social",
+    "ideology": "Center",
+    "summaryFile": "CentroDemocraticoySocial-AnaVirginiaCalzada-summary.md",
+    "sourcePdf": "CentroDemocraticoySocial-AnaVirginiaCalzada-PlandeGobierno.pdf",
+    "slug": "ana-virginia-calzada"
+  },
+  "claudia-dobles": {
+    "displayName": "Claudia Dobles",
+    "party": "Coalición Agenda Ciudadana",
+    "ideology": "Center-Left",
+    "summaryFile": "CoalicionAgendaCiudadana-ClaudiaDobles-summary.md",
+    "sourcePdf": "CoalicionAgendaCiudadana-ClaudiaDobles-PlandeGobierno.pdf",
+    "slug": "claudia-dobles"
+  },
+  "david-hernandez": {
+    "displayName": "David Hernández",
+    "party": "De La Clase Trabajadora",
+    "ideology": "Left",
+    "summaryFile": "DeLaClaseTrabajadora-DavidHernandez-summary.md",
+    "sourcePdf": "DeLaClaseTrabajadora-DavidHernandez-PlandeGobierno.pdf",
+    "slug": "david-hernandez"
+  },
+  "douglas-caamano": {
+    "displayName": "Douglas Caamaño",
+    "party": "Alianza Costa Rica Primero",
+    "ideology": "Center-Right",
+    "summaryFile": "AlianzaCostaRicaPrimero-DouglasCaamano-summary.md",
+    "sourcePdf": "AlianzaCostaRicaPrimero-DouglasCaamano-PlandeGobierno.pdf",
+    "slug": "douglas-caamano"
+  },
+  "eliecer-feinzaig": {
+    "displayName": "Eliecer Feinzaig",
+    "party": "Liberal Progresista",
+    "ideology": "Center-Right",
+    "summaryFile": "LiberalProgresista-EliecerFeinzaig-summary.md",
+    "sourcePdf": "LiberalProgresista-EliecerFeinzaig-PlandeGobierno.pdf",
+    "slug": "eliecer-feinzaig"
+  },
+  "fernando-zamora": {
+    "displayName": "Fernando Zamora",
+    "party": "Nueva Generación",
+    "ideology": "Center-Left",
+    "summaryFile": "NuevaGeneracion-FernandoZamora-summary.md",
+    "sourcePdf": "NuevaGeneracion-FernandoZamora-PlandeGobierno.pdf",
+    "slug": "fernando-zamora"
+  },
+  "fabricio-alvarado": {
+    "displayName": "Fabricio Alvarado",
+    "party": "Nueva República",
+    "ideology": "Right",
+    "summaryFile": "NuevaRepublica-FabricioAlvarado-summary.md",
+    "sourcePdf": "NuevaRepublica-FabricioAlvarado-PlandeGobierno.pdf",
+    "slug": "fabricio-alvarado"
+  },
+  "juan-carlos-hidalgo": {
+    "displayName": "Juan Carlos Hidalgo",
+    "party": "Unidad Social Cristiana",
+    "ideology": "Center-Right",
+    "summaryFile": "UnidadSocialCristiana-JuanCarlosHidalgo-summary.md",
+    "sourcePdf": "UnidadSocialCristiana-JuanCarlosHidalgo-PlandeGobierno.pdf",
+    "slug": "juan-carlos-hidalgo"
+  },
+  "jose-aguilar": {
+    "displayName": "José Aguilar",
+    "party": "Avanza",
+    "ideology": "Center-Right",
+    "summaryFile": "Avanza-JoseAguilar-summary.md",
+    "sourcePdf": "Avanza-JoseAguilar-PlandeGobierno.pdf",
+    "slug": "jose-aguilar"
+  },
+  "claudio-alpizar": {
+    "displayName": "Claudio Alpízar",
+    "party": "Esperanza Nacional",
+    "ideology": "Right",
+    "summaryFile": "EsperanzaNacional-ClaudioAlpizar-summary.md",
+    "sourcePdf": "EsperanzaNacional-ClaudioAlpizar-PlandeGobierno.pdf",
+    "slug": "claudio-alpizar"
+  },
+  "marco-rodriguez": {
+    "displayName": "Marco Rodríguez",
+    "party": "Esperanza y Libertad",
+    "ideology": "Right",
+    "summaryFile": "EsperanzayLibertad-MarcoRodriguez-summary.md",
+    "sourcePdf": "EsperanzayLibertad-MarcoRodriguez-PlandeGobierno.pdf",
+    "slug": "marco-rodriguez"
+  },
+  "luis-esteban-amador": {
+    "displayName": "Luis Esteban Amador",
+    "party": "Integración Nacional",
+    "ideology": "Center",
+    "summaryFile": "IntegracionNacional-LuisEstebanAmador-summary.md",
+    "sourcePdf": "IntegracionNacional-LuisEstebanAmador-PlandeGobierno.pdf",
+    "slug": "luis-esteban-amador"
+  },
+  "luz-mary-alpizar": {
+    "displayName": "Luz Mary Alpizar",
+    "party": "Progreso Social Demócrata",
+    "ideology": "Center-Left",
+    "summaryFile": "ProgresoSocialDemocratico-LuzMaryAlpizar-summary.md",
+    "sourcePdf": "ProgresoSocialDemocratico-LuzMaryAlpizar-PlandeGobierno.pdf",
+    "slug": "luz-mary-alpizar"
+  },
+  "laura-fernandez": {
+    "displayName": "Laura Fernández",
+    "party": "Pueblo Soberano",
+    "ideology": "Left",
+    "summaryFile": "PuebloSoberano-LauraFernandez-summary.md",
+    "sourcePdf": "PuebloSoberano-LauraFernandez-PlandeGobierno.pdf",
+    "slug": "laura-fernandez"
+  },
+  "natalia-diaz": {
+    "displayName": "Natalia Díaz",
+    "party": "Unidos Podemos",
+    "ideology": "Left",
+    "summaryFile": "UnidosPodemos-NataliaDiaz-summary.md",
+    "sourcePdf": "UnidosPodemos-NataliaDiaz-PlandeGobierno.pdf",
+    "slug": "natalia-diaz"
+  },
+  "ronny-castillo": {
+    "displayName": "Ronny Castillo",
+    "party": "Aquí Costa Rica Manda",
+    "ideology": "Center",
+    "summaryFile": "AquiCostaRicaManda-RonnyCastillo-summary.md",
+    "sourcePdf": "AquiCostaRicaManda-RonnyCastillo-PlandeGobierno.pdf",
+    "slug": "ronny-castillo"
+  },
+  "walter-ruben-hernandez": {
+    "displayName": "Walter Rubén Hernández",
+    "party": "Justicia Social Costarricense",
+    "ideology": "Left",
+    "summaryFile": "JusticiaSocialCostarricense-WalterRubenHernandez-summary.md",
+    "sourcePdf": "JusticiaSocialCostarricense-WalterRubenHernandez-PlandeGobierno.pdf",
+    "slug": "walter-ruben-hernandez"
+  },
+  "boris-molina": {
+    "displayName": "Boris Molina",
+    "party": "Unión Costarricense Democrática",
+    "ideology": "Right",
+    "summaryFile": "UnionCostarricenseDemocratica-BorisMolina-summary.md",
+    "sourcePdf": "UnionCostarricenseDemocratica-BorisMolina-PlandeGobierno.pdf",
+    "slug": "boris-molina"
+  }
+}
