@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { useI18n } from '../lib/i18n'
 import type { Candidate } from '../lib/candidate-data.client'
 import { getAllCandidates } from '../lib/candidate-data.functions'
+import { MarkdownContent } from '../components/MarkdownContent'
 
 export const Route = createFileRoute('/compare')({
   component: Compare,
@@ -48,37 +49,11 @@ function Compare() {
     window.print()
   }
 
-  const getCandidateContent = (candidate: Candidate | undefined, section: 'priorities' | 'economicFiscal' | 'socialPrograms' | 'infrastructure') => {
+  const getCandidateContent = (candidate: Candidate | undefined, section: keyof Pick<Candidate, 'priorities' | 'economicFiscal' | 'socialPrograms' | 'infrastructure'>) => {
     if (!candidate) return null
 
-    const contentMap = {
-      priorities: candidate.priorities,
-      economicFiscal: candidate.economicFiscal,
-      socialPrograms: candidate.socialPrograms,
-      infrastructure: candidate.infrastructure,
-    }
-
-    const content = contentMap[section] || ''
-
-    const items = content
-      .split('\n')
-      .filter((line) => line.trim().startsWith('-'))
-      .map((line) => line.replace(/^- \*\*/, '').replace(/\*\*:$/, '').replace(/^- /, '').trim())
-      .slice(0, 5)
-
-    if (items.length === 0) {
-      return <p className="text-gray-500 italic text-sm">No information available</p>
-    }
-
-    return (
-      <ul className="space-y-2">
-        {items.map((item, index) => (
-          <li key={index} className="text-sm text-gray-700 leading-relaxed">
-            <span className="font-medium text-gray-900">•</span> {item}
-          </li>
-        ))}
-      </ul>
-    )
+    const content = candidate[section] || ''
+    return <MarkdownContent content={content} className="text-sm" />
   }
 
   const selectedCandidates = [candidate1, candidate2, candidate3].filter((c): c is Candidate => c !== undefined)

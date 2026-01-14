@@ -31,8 +31,7 @@ export async function readMarkdownFile(filename: string): Promise<string> {
 function parseCandidate(markdown: string, metadata: CandidateMetadata): Candidate {
   const lines = markdown.split('\n')
 
-  const frontmatter: any = {}
-  let inFrontmatter = false
+  let inContent = false
   let currentSection = ''
   const content: Record<string, string> = {
     priorities: '',
@@ -45,17 +44,9 @@ function parseCandidate(markdown: string, metadata: CandidateMetadata): Candidat
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]
 
-    if (line.trim() === '---') {
-      inFrontmatter = !inFrontmatter
-      continue
-    }
-
-    if (inFrontmatter) {
-      const match = line.match(/^(\w+):\s*"?(.+?)"?\s*$/)
-      if (match) {
-        const key = match[1].toLowerCase()
-        const value = match[2].replace(/"/g, '')
-        frontmatter[key] = value
+    if (!inContent) {
+      if (line.trim() === '---') {
+        inContent = true
       }
       continue
     }
@@ -80,9 +71,9 @@ function parseCandidate(markdown: string, metadata: CandidateMetadata): Candidat
     socialPrograms: content.socialPrograms || '',
     infrastructure: content.infrastructure || '',
     additionalNotes: content.additionalNotes || '',
-    source: frontmatter.source_pdf || '',
-    pages: String(frontmatter.pages || ''),
-    processedDate: frontmatter.processed_date || '',
+    source: metadata.sourcePdf || '',
+    pages: '',
+    processedDate: '',
   }
 }
 

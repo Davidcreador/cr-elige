@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { useI18n } from '../lib/i18n'
 import { candidatesMetadata } from '../lib/candidate-data.client'
 import { getCandidateBySlug, getAllCandidates } from '../lib/candidate-data.functions'
+import { MarkdownContent } from '../components/MarkdownContent'
 
 export const Route = createFileRoute('/candidate/$slug')({
   component: CandidateProfile,
@@ -56,52 +57,16 @@ function CandidateProfile() {
     .filter((c) => c.ideology === candidate.ideology && c.slug !== candidate.slug)
     .slice(0, 3)
 
-  const formatContent = (content: string) => {
-    if (!content) return <p className="text-gray-500 italic">No information available</p>
-
-    const lines = content.split('\n').filter((line) => line.trim())
-    const items: string[] = []
-    let currentQuote: string[] = []
-
-    for (const line of lines) {
-      if (line.trim().startsWith('- **')) {
-        if (currentQuote.length > 0) {
-          items.push(currentQuote.join(' '))
-          currentQuote = []
-        }
-        const text = line.replace(/^- \*\*/, '').replace(/\*\*:$/, '').trim()
-        items.push(text)
-      } else if (line.trim().startsWith('-')) {
-        const text = line.replace(/^- /, '').trim()
-        currentQuote.push(text)
-      }
-    }
-
-    if (currentQuote.length > 0) {
-      items.push(currentQuote.join(' '))
-    }
-
-    return (
-      <ul className="space-y-3">
-        {items.map((item, index) => (
-          <li key={index} className="text-gray-700 leading-relaxed">
-            <span className="font-medium text-gray-900">•</span> {item}
-          </li>
-        ))}
-      </ul>
-    )
-  }
-
   const tabValueToContent = (value: string) => {
     switch (value) {
       case 'priorities':
-        return formatContent(candidate.priorities)
+        return <MarkdownContent content={candidate.priorities} />
       case 'economicFiscal':
-        return formatContent(candidate.economicFiscal)
+        return <MarkdownContent content={candidate.economicFiscal} />
       case 'socialPrograms':
-        return formatContent(candidate.socialPrograms)
+        return <MarkdownContent content={candidate.socialPrograms} />
       case 'infrastructure':
-        return formatContent(candidate.infrastructure)
+        return <MarkdownContent content={candidate.infrastructure} />
       default:
         return null
     }
@@ -225,9 +190,7 @@ function CandidateProfile() {
               <CardTitle>{t.candidate.additionalNotes}</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
-              <div className="prose prose-sm max-w-none text-gray-700">
-                {formatContent(candidate.additionalNotes)}
-              </div>
+              <MarkdownContent content={candidate.additionalNotes} className="prose-sm" />
             </CardContent>
           </Card>
         )}
