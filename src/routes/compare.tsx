@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select'
 import { useI18n } from '../lib/i18n'
 import type { Candidate } from '../lib/candidate-data.client'
-import { getAllCandidates } from '../lib/candidate-data'
+import { getAllCandidates } from '../lib/candidate-data.functions'
 
 export const Route = createFileRoute('/compare')({
   component: Compare,
@@ -158,7 +158,6 @@ function Compare() {
                       <SelectValue placeholder={t.compare.selectPlaceholder} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">{t.compare.select3}</SelectItem>
                       {candidates
                         .filter((c) => c.slug !== selected1 && c.slug !== selected2)
                         .map((candidate) => (

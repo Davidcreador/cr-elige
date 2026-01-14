@@ -6,7 +6,7 @@ import { Badge } from '../components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { useI18n } from '../lib/i18n'
 import { candidatesMetadata } from '../lib/candidate-data.client'
-import { getCandidateBySlug, getAllCandidates } from '../lib/candidate-data'
+import { getCandidateBySlug, getAllCandidates } from '../lib/candidate-data.functions'
 
 export const Route = createFileRoute('/candidate/$slug')({
   component: CandidateProfile,
@@ -17,7 +17,7 @@ export const Route = createFileRoute('/candidate/$slug')({
     }
 
     // Then load candidate and all candidates
-    const candidate = await getCandidateBySlug(params.slug)
+    const candidate = await getCandidateBySlug({ data: { slug: params.slug } })
     const allCandidates = await getAllCandidates()
     return { candidate, allCandidates }
   },

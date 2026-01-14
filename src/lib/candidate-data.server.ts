@@ -2,7 +2,6 @@ import { readFile } from 'fs/promises'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import {
-  candidatesMetadata,
   type Candidate,
   type CandidateMetadata,
 } from './candidate-data.client'
@@ -100,6 +99,7 @@ function mapSectionToKey(section: string): 'priorities' | 'economicFiscal' | 'so
 }
 
 export async function getAllCandidates(): Promise<Candidate[]> {
+  const { candidatesMetadata } = await import('./candidate-data.client')
   const candidates: Candidate[] = []
 
   for (const [_slug, metadata] of Object.entries(candidatesMetadata) as [string, CandidateMetadata][]) {
@@ -112,11 +112,10 @@ export async function getAllCandidates(): Promise<Candidate[]> {
 }
 
 export async function getCandidateBySlug(slug: string): Promise<Candidate | undefined> {
+  const { candidatesMetadata } = await import('./candidate-data.client')
   const metadata = (candidatesMetadata as Record<string, CandidateMetadata>)[slug]
   if (!metadata) return undefined
 
   const markdown = await readMarkdownFile(metadata.summaryFile)
   return parseCandidate(markdown, metadata)
 }
-
-export type { Candidate }
