@@ -42,11 +42,11 @@ function Candidates() {
   );
 
   const ideologyColors: Record<string, string> = {
-    Left: "bg-red-100 text-red-800 hover:bg-red-200",
-    "Center-Left": "bg-orange-100 text-orange-800 hover:bg-orange-200",
-    Center: "bg-gray-100 text-gray-800 hover:bg-gray-200",
-    "Center-Right": "bg-blue-100 text-blue-800 hover:bg-blue-200",
-    Right: "bg-indigo-100 text-indigo-800 hover:bg-indigo-200",
+    Left: "bg-gradient-to-br from-[#EF3340] to-[#ff5a63] text-white",
+    "Center-Left": "bg-gradient-to-br from-[#335288] to-[#4a6b9f] text-white",
+    Center: "bg-gradient-to-br from-[#00205B] to-[#1a3a7a] text-white",
+    "Center-Right": "bg-gradient-to-br from-[#335288] to-[#4a6b9f] text-white",
+    Right: "bg-gradient-to-br from-[#00205B] to-[#1a3a7a] text-white",
   };
 
   const ideologies = [
@@ -59,29 +59,29 @@ function Candidates() {
   ] as const;
 
   return (
-    <div className="min-h-screen bg-white py-12 px-6">
+    <div className="min-h-screen bg-gradient-hero py-12 px-6">
       <div className="container mx-auto max-w-7xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="mb-12">
+          <h1 className="display-large mb-4">
             {t.nav.candidates}
           </h1>
-          <p className="text-gray-600">{t.home.heroSubtitle}</p>
+          <p className="lead text-[var(--muted-foreground)]">{t.home.heroSubtitle}</p>
         </div>
 
-        <div className="mb-8 space-y-4">
+        <div className="mb-10 space-y-5">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[var(--muted-foreground)]" />
               <Input
                 type="text"
                 placeholder={t.candidates.searchPlaceholder}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-10"
+                className="pl-11 h-11 rounded-lg"
               />
             </div>
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-full sm:w-48">
+              <SelectTrigger className="w-full sm:w-48 h-11 rounded-lg">
                 <SelectValue placeholder={t.candidates.sort} />
               </SelectTrigger>
               <SelectContent>
@@ -101,8 +101,8 @@ function Candidates() {
             </Select>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            <span className="text-sm text-gray-600 py-2">
+          <div className="flex flex-wrap gap-3">
+            <span className="text-sm font-medium text-[var(--muted-foreground)] py-2.5">
               {t.candidates.filter}
             </span>
             {ideologies.map((ideology) => (
@@ -126,15 +126,15 @@ function Candidates() {
           {sorted.map((candidate) => (
             <Card
               key={candidate.slug}
-              className="border-gray-200 hover:shadow-md transition-shadow"
+              className="card-elevated"
             >
-              <CardContent className="pt-6 pb-6">
-                <div className="space-y-4">
+              <CardContent className="pt-7 pb-7">
+                <div className="space-y-5">
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                    <h3 className="heading-small mb-2">
                       {candidate.displayName}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className="text-sm text-[var(--muted-foreground)] mb-3 leading-relaxed">
                       {candidate.party}
                     </p>
                     <Badge className={ideologyColors[candidate.ideology]}>
@@ -163,11 +163,11 @@ function Candidates() {
         </div>
 
         {sorted.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-500">No candidates match your search</p>
+          <div className="text-center py-16">
+            <p className="text-[var(--muted-foreground)] text-lg">No candidates match your search</p>
           </div>
         )}
       </div>
     </div>
-  );
+  )
 }

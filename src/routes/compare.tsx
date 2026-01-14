@@ -32,11 +32,11 @@ function Compare() {
   const candidate3 = candidates.find((c) => c.slug === selected3)
 
   const ideologyColors: Record<string, string> = {
-    Left: 'bg-red-100 text-red-800',
-    'Center-Left': 'bg-orange-100 text-orange-800',
-    Center: 'bg-gray-100 text-gray-800',
-    'Center-Right': 'bg-blue-100 text-blue-800',
-    Right: 'bg-indigo-100 text-indigo-800',
+    Left: 'bg-gradient-to-br from-[#EF3340] to-[#ff5a63] text-white',
+    'Center-Left': 'bg-gradient-to-br from-[#335288] to-[#4a6b9f] text-white',
+    Center: 'bg-gradient-to-br from-[#00205B] to-[#1a3a7a] text-white',
+    'Center-Right': 'bg-gradient-to-br from-[#335288] to-[#4a6b9f] text-white',
+    Right: 'bg-gradient-to-br from-[#00205B] to-[#1a3a7a] text-white',
   }
 
   const clearSelection = () => {
@@ -59,15 +59,15 @@ function Compare() {
   const selectedCandidates = [candidate1, candidate2, candidate3].filter((c): c is Candidate => c !== undefined)
 
   return (
-    <div className="min-h-screen bg-white py-12 px-6">
+    <div className="min-h-screen bg-gradient-hero py-12 px-6">
       <div className="container mx-auto max-w-7xl">
-        <div className="mb-8">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+        <div className="mb-10">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{t.compare.title}</h1>
-              <p className="text-gray-600">{t.home.heroSubtitle}</p>
+              <h1 className="display-large mb-3">{t.compare.title}</h1>
+              <p className="lead text-[var(--muted-foreground)]">{t.home.heroSubtitle}</p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               <Button variant="outline" onClick={clearSelection} disabled={!selected1 && !selected2 && !selected3}>
                 <RotateCcw className="mr-2 h-4 w-4" />
                 {t.compare.clear}
@@ -80,16 +80,16 @@ function Compare() {
           </div>
         </div>
 
-        <div className="mb-8">
-          <Card className="border-gray-200">
-            <CardContent className="pt-6 pb-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mb-10">
+          <Card className="card-elevated">
+            <CardContent className="pt-8 pb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[var(--foreground)] mb-3">
                     {t.compare.select1}
                   </label>
                   <Select value={selected1} onValueChange={setSelected1}>
-                    <SelectTrigger>
+                    <SelectTrigger className="h-11 rounded-lg">
                       <SelectValue placeholder={t.compare.selectPlaceholder} />
                     </SelectTrigger>
                     <SelectContent>
@@ -105,11 +105,11 @@ function Compare() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[var(--foreground)] mb-3">
                     {t.compare.select2}
                   </label>
                   <Select value={selected2} onValueChange={setSelected2}>
-                    <SelectTrigger>
+                    <SelectTrigger className="h-11 rounded-lg">
                       <SelectValue placeholder={t.compare.selectPlaceholder} />
                     </SelectTrigger>
                     <SelectContent>
@@ -125,11 +125,11 @@ function Compare() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[var(--foreground)] mb-3">
                     {t.compare.select3}
                   </label>
                   <Select value={selected3} onValueChange={setSelected3}>
-                    <SelectTrigger>
+                    <SelectTrigger className="h-11 rounded-lg">
                       <SelectValue placeholder={t.compare.selectPlaceholder} />
                     </SelectTrigger>
                     <SelectContent>
@@ -150,18 +150,18 @@ function Compare() {
 
         {selectedCandidates.length >= 2 && (
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-12 rounded-lg">
               <TabsTrigger value="priorities">{t.compare.tabs.priorities}</TabsTrigger>
               <TabsTrigger value="economicFiscal">{t.compare.tabs.economicFiscal}</TabsTrigger>
               <TabsTrigger value="socialPrograms">{t.compare.tabs.socialPrograms}</TabsTrigger>
               <TabsTrigger value="infrastructure">{t.compare.tabs.infrastructure}</TabsTrigger>
             </TabsList>
 
-            <div className="mt-6">
+            <div className="mt-8">
               <TabsContent value="priorities">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {selectedCandidates.map((candidate) => (
-                    <Card key={candidate.slug} className="border-gray-200">
+                    <Card key={candidate.slug} className="card-elevated">
                       <CardHeader>
                         <CardTitle className="flex items-center justify-between">
                           <span>{candidate.displayName}</span>
@@ -181,7 +181,7 @@ function Compare() {
               <TabsContent value="economicFiscal">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {selectedCandidates.map((candidate) => (
-                    <Card key={candidate.slug} className="border-gray-200">
+                    <Card key={candidate.slug} className="card-elevated">
                       <CardHeader>
                         <CardTitle className="flex items-center justify-between">
                           <span>{candidate.displayName}</span>
@@ -201,7 +201,7 @@ function Compare() {
               <TabsContent value="socialPrograms">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {selectedCandidates.map((candidate) => (
-                    <Card key={candidate.slug} className="border-gray-200">
+                    <Card key={candidate.slug} className="card-elevated">
                       <CardHeader>
                         <CardTitle className="flex items-center justify-between">
                           <span>{candidate.displayName}</span>
@@ -221,7 +221,7 @@ function Compare() {
               <TabsContent value="infrastructure">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {selectedCandidates.map((candidate) => (
-                    <Card key={candidate.slug} className="border-gray-200">
+                    <Card key={candidate.slug} className="card-elevated">
                       <CardHeader>
                         <CardTitle className="flex items-center justify-between">
                           <span>{candidate.displayName}</span>
@@ -242,10 +242,10 @@ function Compare() {
         )}
 
         {selectedCandidates.length < 2 && selectedCandidates.length > 0 && (
-          <div className="text-center py-12">
-            <Card className="border-gray-200 bg-gray-50 inline-block">
-              <CardContent className="pt-6 pb-6">
-                <p className="text-gray-600">
+          <div className="text-center py-16">
+            <Card className="card-elevated inline-block">
+              <CardContent className="pt-8 pb-8">
+                <p className="text-[var(--muted-foreground)] text-lg">
                   {selectedCandidates.length === 1
                     ? 'Select at least one more candidate to compare'
                     : 'Select at least two candidates to compare'}
