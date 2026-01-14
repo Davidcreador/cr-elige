@@ -1,0 +1,72 @@
+# EsperanzaNacional - ClaudioAlpizar - Resumen del Plan de Gobierno
+
+**Fuente:** EsperanzaNacional-ClaudioAlpizar-PlandeGobierno.pdf
+**Páginas:** 102
+**Fecha de Procesamiento:** 2026-01-11
+
+---
+
+## Prioridades Principales de Política
+
+- **Desarrollo humano inclusivo**: Enfoque transversal en poblaciones vulnerables (adultos mayores, personas con discapacidad, migrantes, niñez) con programas específicos de atención, integración social y protección de derechos.
+- **Sostenibilidad ambiental como eje estratégico**: Protección del 26% del territorio en Áreas Silvestres Protegidas, fortalecimiento del SINAC, plan de restauración de tierras y paisajes, economía circular y cumplimiento del Plan Nacional de Descarbonización.
+- **Reactivación del sector agropecuario**: Prioridad absoluta para garantizar seguridad alimentaria, generar empleo rural, implementar agricultura de precisión, crear centros de concentración de oferta, y combatir la crisis del sector (-0,6% en julio 2025).
+- **Fortalecimiento del sistema de salud**: Resolver deuda del Estado con CCSS mediante emisión de títulos valores, reducir listas de espera (292.486 pacientes en consulta externa), retener especialistas, construir hospitales de Cartago y Limón, fortalecer atención primaria.
+- **Desarrollo tecnológico transformador**: Conversión de Costa Rica en "Smart City", implementación de tecnología verde, laboratorios de innovación ciudadana, digitalización del Estado, impulso a STEAM y modelo de cinco hélices para innovación.
+
+## Planes Económicos y Fiscales
+
+- **Contexto de desaceleración económica**: Reconocimiento de crecimiento del PIB reducido al 3-3.5% en 2025 (vs 4.3% en 2024), con factores externos (guerra comercial, política fiscal de EE.UU., desaceleración global) e internos (política monetaria restrictiva, apreciación del colón) que requieren respuesta inmediata.
+- **Transformación del sector agropecuario**: Inversión sustancial para convertirlo en "granero de América" mediante tecnologías de precisión, clústeres regionales por afinidad productiva, apoyo técnico-financiero, valor agregado en exportaciones, préstamo Banco Mundial $120 millones, devolver al CNP capacidad de control de precios.
+- **Reactivación económica sectorial**: Diversificación turística (rural, médico, deportivo, astroturismo, bienestar), mejora de seguridad turística, promoción de turismo interno, atracción IED con simplificación de trámites, apoyo integral a MiPymes con financiamiento Banca para el Desarrollo.
+- **Política fiscal responsable**: Gestión eficiente de hacienda pública, análisis exhaustivo del sistema impositivo para optimizar recaudación sin crear nuevos tributos, evaluación del sistema de transferencias, control riguroso del gasto público para no deteriorar variables fiscales o monetarias.
+- **Política monetaria y cambiaria**: Autonomía total al BCCR manteniendo verificación de papel proactivo en MONEX, regulación paulatina del tipo de cambio para proteger a todos los sectores (no solo algunos), reducción gradual de tasas de interés para incentivar crecimiento.
+- **Comercio internacional estratégico**: Rechazo a Tratados de Alianza del Pacífico y Transpacífico por daños al sector agrícola (salvo trato preferencial), búsqueda de nuevos mercados ante aranceles de 15% de EE.UU., revisión de acuerdos comerciales para identificar mejoras, promoción de integración regional México-Panamá.
+- **Mejora de productividad**: Reducción de informalidad laboral, fortalecimiento de asistencia social, alineación de planes de estudio con necesidades del mercado, ampliación de educación dual, promoción de bilingüismo, eliminación de barreras a la competencia y empleo formal.
+
+## Programas Sociales y Reformas
+
+- **Salud - Crisis y soluciones integrales**: Resolución inmediata de deuda estatal con CCSS mediante emisión de títulos valores colocados en asociaciones de trabajadores; abordaje de listas de espera (292.486 en consulta externa con 390 días promedio, 178.506 en cirugías con 432 días); retención de especialistas afectados por salario global; construcción de hospitales de Cartago y Limón; fortalecimiento de atención primaria; promoción de salud y prevención; Plan Estratégico sectorial desde Ministerio de Salud como rector.
+- **Educación - Inversión y reforma**: Cumplimiento constitucional del 8% PIB para educación; alineación de planes de estudio con necesidades del mercado laboral para reducir desajustes de habilidades; incremento de tasas de graduación en todas las etapas; ampliación de educación dual; promoción de educación secundaria para adultos y bilingüismo; implementación de nuevo modelo educativo orientado a competencias.
+- **Adultos mayores - Envejecimiento activo**: Inversión en promoción de salud y prevención en EBAISs; estímulo a movilidad y actividad física moderada; apoyo a emprendimientos (modelo "Emprendedores de Oro" UCR); coordinación con gobiernos locales para integración comunitaria; reforma profunda del sistema de pensiones (IVM) con diversificación de fuentes de financiamiento, inversión en planes voluntarios y mejor administración de fondos.
+- **Personas con discapacidad (676.310 personas, 17.2% población adulta)**: Fortalecimiento de CONAPDIS y reforma Ley 9303; ley sobre diseño universal en infraestructura y movilidad; promoción de turismo accesible e inclusivo; exoneración de impuestos en importación de implementos de apoyo; inclusión de LESCO como asignatura optativa en planes de estudio.
+- **Vivienda social - Fortalecimiento del SFNV**: Mejora de coordinación del Sistema Financiero Nacional para la Vivienda; estabilidad y suficiencia de recursos para FOSUVI; adaptación a dinámicas socioespaciales actuales para evitar segregación; construcción en zonas urbanas bien equipadas; diversificación de fuentes de financiamiento (BCIE y otros); programas para jóvenes que desean independizarse (no solo parejas); regulación del mercado inmobiliario contra especulación.
+- **Red de cuido - Expansión y fortalecimiento**: Ampliación de REDCUDI para cubrir 427 mil niños (0-6 años) y 383 mil (7-12 años) vs cobertura actual de 42% en pobreza extrema y 30% en pobreza básica; presupuesto adecuado para atender población vulnerable; corrección de debilidades en gobernanza señaladas por CGR; reversión del decrecimiento del 7% en CEN-CINAI.
+- **Población migrante - Atención integral**: Censo de población migrante; refuerzo de controles migratorios dotando recursos a DGME; brigadas interinstitucionales; atención a población vulnerable y exclusión que enfrentan.
+
+## Infraestructura y Medio Ambiente
+
+- **Protección ambiental fortalecida**: Fortalecimiento del SINAC (26% del territorio protegido) mediante reinversión de recursos generados por concesiones y servicios, actualización de cánones de ingreso a ASPs, reforma normativa para reasignar personal profesional; protección de manglares y humedales como viveros naturales; plan nacional de restauración de tierras y paisajes con PSA y créditos blandos.
+- **Planes Reguladores y ordenamiento territorial**: Coordinación Estado-universidades-empresa privada-gobiernos locales para elaborar Planes Reguladores ajustados a características de cada cantón; zonificación de ecosistemas incluyendo polos de producción forestal; protección de mantos acuíferos, nacientes, quebradas y ríos; regionalización de direcciones del MINAE para acceso rápido a trámites.
+- **Gestión integral de residuos y economía circular**: Proyectos comunitarios de compostaje en huertas escolares y comunitarias; reciclaje industrial de aparatos eléctricos/electrónicos, cauchos, vidrio, plásticos; centros de acopio industrializados con tecnología de punta por provincia/región; cada municipio asume responsabilidad según carga de desechos; uso de empaques sostenibles (vidrio, papel, cartón).
+- **Energías renovables - Diversificación de matriz**: Expansión de energía eólica hacia 30% de la matriz (actualmente 10%); desarrollo de geotermia, energía marina, solar fotovoltaica y termosolar; aprovechamiento de biomasa (rastrojo de piña en lugar de quemarlo); reducción de dependencia de hidroeléctrica (afectada por sequías); mantener 98% de electricidad de fuentes renovables; disminuir dependencia del 68% de derivados de petróleo en consumo final de energía.
+- **Red vial, ferroviaria y portuaria - Transformación integral**: Mejora de conectividad para reducir logística de carga entre centros de producción, consumo y puertos; financiamiento mediante banca multilateral, APPs, inversión pública, bonos verdes, fondos climáticos; modelos de contratación DB, DBFOM, contratos por desempeño; corredores logísticos estratégicos; red de resiliencia climática y sísmica.
+- **Proyectos ferroviarios estratégicos**: Continuidad y expansión del Tren Eléctrico Metropolitano (TEMP); Tren Eléctrico Limonense de Carga (TELCA); reactivación del Ferrocarril de Golfito (carga y turismo); rehabilitación de ruta San José-Puntarenas; análisis de viabilidad Puerto Caldera-Liberia; Canal Seco comunicando Atlántico-Pacífico en menos de 4 horas (tren + carretera paralela); conexión Tacares de Grecia desde Atenas.
+- **Puertos - Modernización y expansión**: Fortalecimiento y ampliación de Limón y Caldera; estudios de viabilidad en Golfito, Quepos, costas de Guanacaste y costa limonense; conversión en emporios de trasiego de mercancías mundiales; coordinación MOPT-Municipios para mejora de rutas y centrales de autobuses.
+- **Transporte público - Foro internacional y reforma**: Foro internacional en primeros 100 días de gobierno con expertos y organismos internacionales; análisis comparativo de modelos de Japón, Chile, Holanda, México; mejora de calidad de vida, reducción de tiempos de viaje, aumento de productividad.
+- **Política de recursos naturales**: Concesión de zonas auríferas (Crucitas, Abangares, Osa) con empresas de buenas prácticas ambientales y restauración de sitios; ganancias para consolidar régimen de pensiones; rechazo total a explotación de hidrocarburos; retomar refinamiento de petróleo con tecnología de punta en puertos modernizados.
+- **Cambio climático y sostenibilidad**: Continuidad de Plan Nacional de Descarbonización y Política Nacional de Adaptación; triada del desarrollo sostenible (económico, social, ambiental); agricultura sostenible; tecnología verde transversal en todos los componentes.
+
+---
+
+## Notas Adicionales
+
+**Propuestas tecnológicas innovadoras:**
+- **Smart Cities y ciudades inteligentes**: Programa ambicioso para convertir a Costa Rica en ciudad inteligente y sostenible con 7 elementos clave (ciudad digital, cognitiva, virtual, de la información, ubicua, verde, economía circular); plan piloto en 10 municipios ($10 millones estimados); modelo de Curitiba (Brasil) como referencia.
+- **Laboratorios de Innovación Ciudadana**: Red nacional instalada en municipalidades, colegios técnicos y centros comunales reuniendo vecinos-empresas-universidades-gobierno; dotación de impresoras 3D, kits de sensores, software libre, acceso a datos públicos; financiamiento para proyectos viables.
+- **Centros regionales de innovación**: Generación de empleo basado en emprendimientos tecnológicos e innovación, siguiendo modelos de Santiago de Chile y Guadalajara; modelo de cinco hélices (academia-empresa-gobierno-entorno natural-sociedad civil).
+- **Plan Nacional de CTI 2022-2027**: Continuidad y fortalecimiento del Plan Nacional de Ciencia, Tecnología e Innovación; áreas estratégicas (talento humano STEAM, generación de conocimiento, innovación transformadora); áreas transversales (salud humana y ciencias de la vida, bioeconomía, tecnologías digitales, inteligencia artificial, desarrollo aeroespacial vía Ley 9960).
+
+**Reformas estructurales distintivas:**
+- **Bienestar animal - Reforma Ley 9458**: Estudio de aumento de penas (actualmente impiden prisión en mayoría de casos) considerando modelos de México y Colombia (hasta 6 y 4.6 años respectivamente); asignación de recursos al Poder Judicial para investigación especializada (necropsias, veterinarios forenses, equipo de transporte); creación de materia de bienestar animal en escuelas y colegios; fin de prevención especial negativa.
+- **Concejo Cantonal de Coordinación Interinstitucional**: Activación y fortalecimiento para que gobiernos locales desarrollen planes de desarrollo humano cantonal, mejoren producción local, accedan a recursos de Banca para el Desarrollo; papel clave en conectividad tecnológica municipal.
+- **Política de economía azul**: Uso sostenible de mares y costas mediante acuicultura sostenible, turismo costero y marino sostenible, biotecnología marina; aprovechamiento de manglares y marismas como viveros para proyectos comunitarios con apoyo de universidades e instituciones.
+- **Modelo de subasta agrícola**: Coordinación con Escuela de Economía UCR para implementar mecanismo alternativo donde precios se definen por encuentro de oferta-demanda mediante "puja" pública de compradores; modelo de subastas ganaderas como referencia; plan piloto para cambio de modelo.
+
+**Contexto político y enfoque:**
+- **Documento participativo y adaptativo**: Resultado de amplia participación de miembros del partido, socializado con diversos sectores y grupos de interés; uso de IA en 25-30% del trabajo para organización de ideas; concebido como marco de referencia en revisión permanente, abierto a mejora continua y diálogo con todos los sectores.
+- **Enfoque de desarrollo sostenible integral**: Triada económica-social-ambiental como eje transversal; énfasis en que salud es condición base para aprovechar oportunidades (personas sanas + educadas + capacitadas = productividad); impacto multiplicador de enfermedad en reducción de fuerza laboral (enfermo + cuidador = dos personas sin trabajar).
+- **Posición crítica ante coyuntura**: Reconocimiento explícito de desaceleración económica y desafíos estructurales; datos concretos de IMAE, inflación negativa, caída de turismo, crisis agrícola, salida de empresas de zonas francas; propuesta de respuesta inmediata en primeros 100 días (foro de transporte público, emisión de títulos para deuda CCSS, activación de préstamo Banco Mundial para agricultura).
+
+**Posicionamiento político:** Centro con fuerte énfasis en sostenibilidad ambiental, desarrollo tecnológico e inclusión social; visión de largo plazo para infraestructura y transformación digital; rechazo a tratados comerciales que dañen agricultura; priorización absoluta del sector agropecuario como base de seguridad alimentaria y empleo rural.
+
