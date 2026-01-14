@@ -72,6 +72,28 @@ const translations = {
         socialPrograms: 'Sociales',
         infrastructure: 'Infraestructura',
       },
+      viewToggle: {
+        card: 'Tarjetas',
+        table: 'Tabla',
+      },
+      summary: {
+        title: 'Resumen de Comparación',
+        allAgree: 'Donde todos coinciden',
+        disagree: 'Puntos de desacuerdo',
+        unique: 'Propuestas únicas',
+      },
+      filters: {
+        showAllTopics: 'Mostrar todos los temas',
+        differencesOnly: 'Mostrar solo diferencias',
+        clearFilters: 'Limpiar filtros',
+        topics: 'Temas:',
+      },
+      sections: {
+        priorities: 'Prioridades',
+        economicFiscal: 'Economía',
+        socialPrograms: 'Sociales',
+        infrastructure: 'Infraestructura',
+      },
     },
     methodology: {
       title: 'Metodología',
@@ -179,6 +201,28 @@ const translations = {
       print: 'Print',
       clear: 'Clear Selection',
       tabs: {
+        priorities: 'Priorities',
+        economicFiscal: 'Economy',
+        socialPrograms: 'Social',
+        infrastructure: 'Infrastructure',
+      },
+      viewToggle: {
+        card: 'Cards',
+        table: 'Table',
+      },
+      summary: {
+        title: 'Comparison Summary',
+        allAgree: 'Where All Candidates Agree',
+        disagree: 'Points of Disagreement',
+        unique: 'Unique Proposals',
+      },
+      filters: {
+        showAllTopics: 'Show All Topics',
+        differencesOnly: 'Show Differences Only',
+        clearFilters: 'Clear Filters',
+        topics: 'Topics:',
+      },
+      sections: {
         priorities: 'Priorities',
         economicFiscal: 'Economy',
         socialPrograms: 'Social',
