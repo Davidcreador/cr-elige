@@ -7,12 +7,13 @@ import { Badge } from '../components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select'
 import { useI18n } from '../lib/i18n'
-import { getAllCandidates, type Candidate } from '../lib/candidate-data'
+import type { Candidate } from '../lib/candidate-data.client'
+import { getAllCandidates } from '../lib/candidate-data'
 
 export const Route = createFileRoute('/compare')({
   component: Compare,
-  loader: () => {
-    const candidates = getAllCandidates()
+  loader: async () => {
+    const candidates = await getAllCandidates()
     return { candidates }
   },
 })

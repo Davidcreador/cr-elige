@@ -1,132 +1,38 @@
-import candidatesMetadata from '../data/candidates-metadata.json'
+import { readFile } from 'fs/promises'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import {
+  candidatesMetadata,
+  type Candidate,
+  type CandidateMetadata,
+} from './candidate-data.client'
 
-interface CandidateMetadata {
-  displayName: string
-  party: string
-  ideology: string
-  summaryFile: string
-  sourcePdf: string
-  slug: string
-}
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
-interface Candidate extends CandidateMetadata {
-  priorities: string
-  economicFiscal: string
-  socialPrograms: string
-  infrastructure: string
-  additionalNotes?: string
-  source: string
-  pages: string
-  processedDate: string
-}
+export async function readMarkdownFile(filename: string): Promise<string> {
+  const possiblePaths = [
+    path.join(process.cwd(), 'src/data/summaries', filename),
+    path.join(__dirname, '../../data/summaries', filename),
+    path.join(process.cwd(), '.next/server/src/data/summaries', filename),
+    path.join(process.cwd(), '.output/server/src/data/summaries', filename),
+  ]
 
-interface SummaryData {
-  party: string
-  candidate: string
-  source_pdf: string
-  pages: number | string
-  processed_date: string
-}
-
-const ideologyOrder: Record<string, number> = {
-  Left: 1,
-  'Center-Left': 2,
-  Center: 3,
-  'Center-Right': 4,
-  Right: 5,
-}
-
-// Import all summary files as strings
-const summaryModules = import.meta.glob('/public/summaries/*.md', { as: 'raw', eager: true })
-
-export function getAllCandidates(): Candidate[] {
-  const candidates: Candidate[] = []
-
-  for (const [_slug, metadata] of Object.entries(candidatesMetadata) as [string, CandidateMetadata][]) {
-    const summary = loadCandidateSummary(metadata.summaryFile)
-    candidates.push({
-      ...metadata,
-      ...summary,
-    })
-  }
-
-  return candidates.sort((a, b) => a.displayName.localeCompare(b.displayName))
-}
-
-export function getCandidateBySlug(slug: string): Candidate | undefined {
-  const metadata = (candidatesMetadata as Record<string, CandidateMetadata>)[slug]
-  if (!metadata) return undefined
-
-  const summary = loadCandidateSummary(metadata.summaryFile)
-  return {
-    ...metadata,
-    ...summary,
-  }
-}
-
-export function filterCandidates(
-  candidates: Candidate[],
-  filters: { search?: string; ideology?: string }
-): Candidate[] {
-  let filtered = [...candidates]
-
-  if (filters.search) {
-    const searchLower = filters.search.toLowerCase()
-    filtered = filtered.filter(
-      (c) =>
-        c.displayName.toLowerCase().includes(searchLower) ||
-        c.party.toLowerCase().includes(searchLower) ||
-        c.ideology.toLowerCase().includes(searchLower)
-    )
-  }
-
-  if (filters.ideology) {
-    filtered = filtered.filter((c) => c.ideology === filters.ideology)
-  }
-
-  return filtered
-}
-
-export function sortCandidates(candidates: Candidate[], sortBy: string): Candidate[] {
-  const sorted = [...candidates]
-
-  switch (sortBy) {
-    case 'name-asc':
-      return sorted.sort((a, b) => a.displayName.localeCompare(b.displayName))
-    case 'name-desc':
-      return sorted.sort((a, b) => b.displayName.localeCompare(a.displayName))
-    case 'ideology-asc':
-      return sorted.sort((a, b) => (ideologyOrder[a.ideology] || 3) - (ideologyOrder[b.ideology] || 3))
-    case 'ideology-desc':
-      return sorted.sort((a, b) => (ideologyOrder[b.ideology] || 3) - (ideologyOrder[a.ideology] || 3))
-    default:
-      return sorted
-  }
-}
-
-export function loadCandidateSummary(filename: string): Omit<Candidate, keyof CandidateMetadata> {
-  try {
-    const text = summaryModules[`/public/summaries/${filename}`] as string
-    return parseSummaryContent(text)
-  } catch (error) {
-    console.error(`Error loading summary ${filename}:`, error)
-    return {
-      priorities: '',
-      economicFiscal: '',
-      socialPrograms: '',
-      infrastructure: '',
-      additionalNotes: '',
-      source: '',
-      pages: '',
-      processedDate: '',
+  for (const filePath of possiblePaths) {
+    try {
+      return await readFile(filePath, 'utf-8')
+    } catch (error) {
+      // Try next path
     }
   }
+
+  throw new Error(`Markdown file not found: ${filename}`, { cause: { paths: possiblePaths } })
 }
 
-function parseSummaryContent(markdown: string): Omit<Candidate, keyof CandidateMetadata> {
+function parseCandidate(markdown: string, metadata: CandidateMetadata): Candidate {
   const lines = markdown.split('\n')
 
-  const frontmatter: Partial<SummaryData> = {}
+  const frontmatter: any = {}
   let inFrontmatter = false
   let currentSection = ''
   const content: Record<string, string> = {
@@ -150,7 +56,7 @@ function parseSummaryContent(markdown: string): Omit<Candidate, keyof CandidateM
       if (match) {
         const key = match[1].toLowerCase()
         const value = match[2].replace(/"/g, '')
-        frontmatter[key as keyof SummaryData] = value
+        frontmatter[key] = value
       }
       continue
     }
@@ -169,6 +75,7 @@ function parseSummaryContent(markdown: string): Omit<Candidate, keyof CandidateM
   }
 
   return {
+    ...metadata,
     priorities: content.priorities || '',
     economicFiscal: content.economicFiscal || '',
     socialPrograms: content.socialPrograms || '',
@@ -190,6 +97,26 @@ function mapSectionToKey(section: string): 'priorities' | 'economicFiscal' | 'so
   }
 
   return mapping[section] || null
+}
+
+export async function getAllCandidates(): Promise<Candidate[]> {
+  const candidates: Candidate[] = []
+
+  for (const [_slug, metadata] of Object.entries(candidatesMetadata) as [string, CandidateMetadata][]) {
+    const markdown = await readMarkdownFile(metadata.summaryFile)
+    const candidate = parseCandidate(markdown, metadata)
+    candidates.push(candidate)
+  }
+
+  return candidates.sort((a, b) => a.displayName.localeCompare(b.displayName))
+}
+
+export async function getCandidateBySlug(slug: string): Promise<Candidate | undefined> {
+  const metadata = (candidatesMetadata as Record<string, CandidateMetadata>)[slug]
+  if (!metadata) return undefined
+
+  const markdown = await readMarkdownFile(metadata.summaryFile)
+  return parseCandidate(markdown, metadata)
 }
 
 export type { Candidate }

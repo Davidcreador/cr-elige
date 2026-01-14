@@ -6,13 +6,14 @@ import { Card, CardContent } from '../components/ui/card'
 import { Input } from '../components/ui/input'
 import { Badge } from '../components/ui/badge'
 import { useI18n } from '../lib/i18n'
-import { getAllCandidates, filterCandidates, sortCandidates } from '../lib/candidate-data'
+import { filterCandidates, sortCandidates } from '../lib/candidate-data.client'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select'
 
 export const Route = createFileRoute('/candidates')({
   component: Candidates,
-  loader: () => {
-    const candidates = getAllCandidates()
+  loader: async () => {
+    const { getAllCandidates } = await import('../lib/candidate-data')
+    const candidates = await getAllCandidates()
     return { candidates }
   },
 })

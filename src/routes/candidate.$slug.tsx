@@ -5,13 +5,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Badge } from '../components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { useI18n } from '../lib/i18n'
+import { candidatesMetadata } from '../lib/candidate-data.client'
 import { getCandidateBySlug, getAllCandidates } from '../lib/candidate-data'
 
 export const Route = createFileRoute('/candidate/$slug')({
   component: CandidateProfile,
-  loader: ({ params }) => {
-    const candidate = getCandidateBySlug(params.slug)
-    const allCandidates = getAllCandidates()
+  loader: async ({ params }) => {
+    // Check if slug exists in metadata first
+    if (!(params.slug in candidatesMetadata)) {
+      throw new Error('Candidate not found')
+    }
+
+    // Then load candidate and all candidates
+    const candidate = await getCandidateBySlug(params.slug)
+    const allCandidates = await getAllCandidates()
     return { candidate, allCandidates }
   },
 })
