@@ -1,32 +1,8 @@
-import { readFile } from 'fs/promises'
-import path from 'path'
-import { fileURLToPath } from 'url'
 import {
   type Candidate,
   type CandidateMetadata,
 } from './candidate-data.client'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-export async function readMarkdownFile(filename: string): Promise<string> {
-  const possiblePaths = [
-    path.join(process.cwd(), 'src/data/summaries', filename),
-    path.join(__dirname, '../../data/summaries', filename),
-    path.join(process.cwd(), '.next/server/src/data/summaries', filename),
-    path.join(process.cwd(), '.output/server/src/data/summaries', filename),
-  ]
-
-  for (const filePath of possiblePaths) {
-    try {
-      return await readFile(filePath, 'utf-8')
-    } catch (error) {
-      // Try next path
-    }
-  }
-
-  throw new Error(`Markdown file not found: ${filename}`, { cause: { paths: possiblePaths } })
-}
+import { getSummaryFile } from '../data/candidate-summaries'
 
 function parseCandidate(markdown: string, metadata: CandidateMetadata): Candidate {
   const lines = markdown.split('\n')
@@ -94,7 +70,7 @@ export async function getAllCandidates(): Promise<Candidate[]> {
   const candidates: Candidate[] = []
 
   for (const [_slug, metadata] of Object.entries(candidatesMetadata) as [string, CandidateMetadata][]) {
-    const markdown = await readMarkdownFile(metadata.summaryFile)
+    const markdown = getSummaryFile(metadata.summaryFile)
     const candidate = parseCandidate(markdown, metadata)
     candidates.push(candidate)
   }
@@ -107,6 +83,6 @@ export async function getCandidateBySlug(slug: string): Promise<Candidate | unde
   const metadata = (candidatesMetadata as Record<string, CandidateMetadata>)[slug]
   if (!metadata) return undefined
 
-  const markdown = await readMarkdownFile(metadata.summaryFile)
+  const markdown = getSummaryFile(metadata.summaryFile)
   return parseCandidate(markdown, metadata)
 }
