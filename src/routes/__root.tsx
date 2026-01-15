@@ -1,37 +1,42 @@
-import { HeadContent, Scripts, createRootRoute, Link } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
+import {
+  HeadContent,
+  Scripts,
+  createRootRoute,
+  Link,
+} from "@tanstack/react-router";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import { Analytics } from "@vercel/analytics/next";
+import { ElectionsHeader } from "../components/ElectionsHeader";
+import { I18nProvider } from "../components/I18nProvider";
+import { useI18n } from "../lib/i18n";
 
-import { ElectionsHeader } from '../components/ElectionsHeader'
-import { I18nProvider } from '../components/I18nProvider'
-import { useI18n } from '../lib/i18n'
-
-import appCss from '../styles.css?url'
+import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       {
-        charSet: 'utf-8',
+        charSet: "utf-8",
       },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
       },
       {
-        title: 'cr-elige | Costa Rica Elections 2026',
+        title: "cr-elige | Costa Rica Elections 2026",
       },
     ],
     links: [
       {
-        rel: 'stylesheet',
+        rel: "stylesheet",
         href: appCss,
       },
     ],
   }),
 
   shellComponent: RootDocument,
-})
+});
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -44,12 +49,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <AppLayout>{children}</AppLayout>
         </I18nProvider>
       </body>
+      <Analytics />
     </html>
-  )
+  );
 }
 
 function AppLayout({ children }: { children: React.ReactNode }) {
-  const t = useI18n()
+  const t = useI18n();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -87,16 +93,16 @@ function AppLayout({ children }: { children: React.ReactNode }) {
       </footer>
       <TanStackDevtools
         config={{
-          position: 'bottom-right',
+          position: "bottom-right",
         }}
         plugins={[
           {
-            name: 'Tanstack Router',
+            name: "Tanstack Router",
             render: <TanStackRouterDevtoolsPanel />,
           },
         ]}
       />
       <Scripts />
     </div>
-  )
+  );
 }
