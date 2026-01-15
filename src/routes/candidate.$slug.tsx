@@ -120,7 +120,7 @@ function CandidateProfile() {
         </div>
 
         <Tabs defaultValue="priorities" className="space-y-8">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-12 rounded-lg">
+          <TabsList className="w-full overflow-x-auto justify-start md:justify-center">
             <TabsTrigger value="priorities">{t.candidate.tabs.priorities}</TabsTrigger>
             <TabsTrigger value="economicFiscal">{t.candidate.tabs.economicFiscal}</TabsTrigger>
             <TabsTrigger value="socialPrograms">{t.candidate.tabs.socialPrograms}</TabsTrigger>

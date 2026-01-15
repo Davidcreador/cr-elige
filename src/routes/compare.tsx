@@ -177,7 +177,7 @@ function Compare() {
 
         {selectedCandidates.length >= 2 && (
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
+            <TabsList className="w-full overflow-x-auto justify-start md:justify-center">
               <TabsTrigger value="priorities">{t.compare.tabs.priorities}</TabsTrigger>
               <TabsTrigger value="economicFiscal">{t.compare.tabs.economicFiscal}</TabsTrigger>
               <TabsTrigger value="socialPrograms">{t.compare.tabs.socialPrograms}</TabsTrigger>
