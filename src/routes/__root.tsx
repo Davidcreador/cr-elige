@@ -6,7 +6,7 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 import { ElectionsHeader } from "../components/ElectionsHeader";
 import { I18nProvider } from "../components/I18nProvider";
 import { useI18n } from "../lib/i18n";
@@ -48,8 +48,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <I18nProvider>
           <AppLayout>{children}</AppLayout>
         </I18nProvider>
+        <Analytics />
       </body>
-      <Analytics />
     </html>
   );
 }
