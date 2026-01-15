@@ -62,10 +62,10 @@ function Candidates() {
     <div className="min-h-screen bg-gradient-hero py-12 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="mb-12">
-          <h1 className="display-large mb-4">
-            {t.nav.candidates}
-          </h1>
-          <p className="lead text-[var(--muted-foreground)]">{t.home.heroSubtitle}</p>
+          <h1 className="display-large mb-4">{t.nav.candidates}</h1>
+          <p className="lead text-[var(--muted-foreground)]">
+            {t.home.heroSubtitle}
+          </p>
         </div>
 
         <div className="mb-10 space-y-5">
@@ -114,9 +114,17 @@ function Candidates() {
               >
                 {ideology === "all"
                   ? t.candidates.filters.all
-                  : t.candidates.filters[
-                      ideology as keyof typeof t.candidates.filters
-                    ]}
+                  : ideology === "Left"
+                    ? t.candidates.filters.left
+                    : ideology === "Center-Left"
+                      ? t.candidates.filters["center-left"]
+                      : ideology === "Center"
+                        ? t.candidates.filters.center
+                        : ideology === "Center-Right"
+                          ? t.candidates.filters["center-right"]
+                          : ideology === "Right"
+                            ? t.candidates.filters.right
+                            : t.candidates.filters.all}
               </Button>
             ))}
           </div>
@@ -124,10 +132,7 @@ function Candidates() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {sorted.map((candidate) => (
-            <Card
-              key={candidate.slug}
-              className="card-elevated"
-            >
+            <Card key={candidate.slug} className="card-elevated">
               <CardContent className="pt-7 pb-7">
                 <div className="space-y-5">
                   <div>
@@ -142,9 +147,13 @@ function Candidates() {
                         ? t.candidates.filters["center-left"]
                         : candidate.ideology === "Center-Right"
                           ? t.candidates.filters["center-right"]
-                          : t.candidates.filters[
-                              candidate.ideology.toLowerCase() as keyof typeof t.candidates.filters
-                            ] || candidate.ideology}
+                          : candidate.ideology === "Center"
+                            ? t.candidates.filters.center
+                            : candidate.ideology === "Left"
+                              ? t.candidates.filters.left
+                              : candidate.ideology === "Right"
+                                ? t.candidates.filters.right
+                                : t.candidates.filters.all}
                     </Badge>
                   </div>
                   <Link
@@ -164,10 +173,12 @@ function Candidates() {
 
         {sorted.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-[var(--muted-foreground)] text-lg">No candidates match your search</p>
+            <p className="text-[var(--muted-foreground)] text-lg">
+              No candidates match your search
+            </p>
           </div>
         )}
       </div>
     </div>
-  )
+  );
 }
